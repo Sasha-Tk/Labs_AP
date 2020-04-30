@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNIGS
+п»ї#define _CRT_SECURE_NO_WARNIGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -33,31 +33,31 @@ int main(void) {
 	{
 		return 0;
 	}
-	printf("\nВведіть сьогоднішню дату у форматі дд.мм.рр ");
+	printf("\nР’РІРµРґС–С‚СЊ СЃСЊРѕРіРѕРґРЅС–С€РЅСЋ РґР°С‚Сѓ Сѓ С„РѕСЂРјР°С‚С– РґРґ.РјРј.СЂСЂ ");
 	gets_s(c_date);
 	max = SearchMaxData_V3(c_date, N, dates, (dates + 1), (dates + 2), (dates + 3));
 	max_d = SearchMaxStrDate(c_date, max.dates, max.k);
-	printf("\n\nЗнайдено структуру №%d з найближчою до сьогоднішньої датою: %s", max.n, max_d);
+	printf("\n\nР—РЅР°Р№РґРµРЅРѕ СЃС‚СЂСѓРєС‚СѓСЂСѓ в„–%d Р· РЅР°Р№Р±Р»РёР¶С‡РѕСЋ РґРѕ СЃСЊРѕРіРѕРґРЅС–С€РЅСЊРѕС— РґР°С‚РѕСЋ: %s", max.n, max_d);
 	DiffDates(max_d, c_date, d_date);
-	printf("\nРізниця дат - %d р, %d м, %d д", d_date[0], d_date[1], d_date[2]);
+	printf("\nР С–Р·РЅРёС†СЏ РґР°С‚ - %d СЂ, %d Рј, %d Рґ", d_date[0], d_date[1], d_date[2]);
 	return 0;
 }
 
 int DataEntry(Date* dates)
 {
-	printf("Дати (не більше %d для кожної структури) "
-		"потрібно вводити у форматі дд.мм.рр через кому!\n", (S - S / 10 * 2) / 10);
-	printf("Структур доступно - %d\n", N);
+	printf("Р”Р°С‚Рё (РЅРµ Р±С–Р»СЊС€Рµ %d РґР»СЏ РєРѕР¶РЅРѕС— СЃС‚СЂСѓРєС‚СѓСЂРё) "
+		"РїРѕС‚СЂС–Р±РЅРѕ РІРІРѕРґРёС‚Рё Сѓ С„РѕСЂРјР°С‚С– РґРґ.РјРј.СЂСЂ С‡РµСЂРµР· РєРѕРјСѓ!\n", (S - S / 10 * 2) / 10);
+	printf("РЎС‚СЂСѓРєС‚СѓСЂ РґРѕСЃС‚СѓРїРЅРѕ - %d\n", N);
 	for (int i = 0; i < N; i++)
 	{
-		printf("\nВведіть дати у структуру №%d: ", i + 1);
+		printf("\nР’РІРµРґС–С‚СЊ РґР°С‚Рё Сѓ СЃС‚СЂСѓРєС‚СѓСЂСѓ в„–%d: ", i + 1);
 		SetStruct(dates + i);
 		(dates + i)->n = i + 1;
-		printf("\nУспішно введено %d дат у структуру №%d/%d\n", (dates + i)->k, (dates + i)->n, N);
+		printf("\nРЈСЃРїС–С€РЅРѕ РІРІРµРґРµРЅРѕ %d РґР°С‚ Сѓ СЃС‚СЂСѓРєС‚СѓСЂСѓ в„–%d/%d\n", (dates + i)->k, (dates + i)->n, N);
 	}
 	if (NoDate(dates, N) == true)
 	{
-		printf("\nВи не ввели жодної адреси в кожну із структур!");
+		printf("\nР’Рё РЅРµ РІРІРµР»Рё Р¶РѕРґРЅРѕС— Р°РґСЂРµСЃРё РІ РєРѕР¶РЅСѓ С–Р· СЃС‚СЂСѓРєС‚СѓСЂ!");
 		return 0;
 	}
 	return !0;
@@ -68,7 +68,7 @@ void SetStruct(Date* D)
 	gets_s(D->dates);
 	D->k = CountDates(D->dates);
 	if (D->k == 0)
-		printf("Ви не ввели жодної дати!");
+		printf("Р’Рё РЅРµ РІРІРµР»Рё Р¶РѕРґРЅРѕС— РґР°С‚Рё!");
 }
 
 int CountDates(char* dates)
