@@ -41,6 +41,7 @@ int main(void)
 	printf("\n%d унікальних трьохзначних чисел записано у файл %s\n", n, f_name);
 	_fcloseall();
 	free(array);
+	free(f_name);
 	return 0;
 }
 
