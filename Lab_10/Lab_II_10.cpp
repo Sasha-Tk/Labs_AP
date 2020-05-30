@@ -52,6 +52,7 @@ int main(void)
 	SearchNodesAtRequstLevel(root);
 	DeleteTree(root);
 	root = NULL;
+	_fcloseall();
 	return 0;
 }
 
